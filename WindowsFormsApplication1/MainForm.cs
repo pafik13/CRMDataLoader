@@ -397,12 +397,20 @@ namespace SBL.DataLoader
             IRestRequest request;
             IRestResponse<List<Net>> response;
 
+            var cache = new Dictionary<string, string>();
             for (int i = 2; i <= 201; i++)
             {
                 string val = workSheet.Cells[i, "O"].Value;
                 if (string.IsNullOrEmpty(val)) continue;
 
                 Console.WriteLine("{0}: {1}", i, val);
+
+                if (cache.ContainsKey(val))
+                {
+                    workSheet.Cells[i, "P"].Value = cache[val];
+                    continue;
+                }
+
                 string path = "Net?where={\"name\":\"" + val + "\"}";
                 request = new RestRequest(path, Method.GET);
                 response = client.Execute<List<Net>>(request);
@@ -415,6 +423,7 @@ namespace SBL.DataLoader
                             break;
                         case 1:
                             workSheet.Cells[i, "P"].Value = response.Data[0].uuid;
+                            cache.Add(val, response.Data[0].uuid);
                             break;
                         default:
                             Console.WriteLine(@"Data.Count>1: {0}", val);
@@ -476,6 +485,7 @@ namespace SBL.DataLoader
             IRestRequest request;
             IRestResponse<List<Net>> response;
 
+            var cache = new Dictionary<string, string>();
             for (int i = 2; i <= 201; i++)
             {
                 object obj = workSheet.Cells[i, "S"].Value2;
@@ -483,6 +493,13 @@ namespace SBL.DataLoader
                 if (string.IsNullOrEmpty(val)) continue;
 
                 Console.WriteLine("{0}: {1}", i, val);
+
+                if (cache.ContainsKey(val))
+                {
+                    workSheet.Cells[i, "T"].Value = cache[val];
+                    continue;
+                }
+
                 string path = "Category?where={\"name\":\"" + val + "\"}";
                 request = new RestRequest(path, Method.GET);
                 response = client.Execute<List<Net>>(request);
@@ -495,6 +512,7 @@ namespace SBL.DataLoader
                             break;
                         case 1:
                             workSheet.Cells[i, "T"].Value = response.Data[0].uuid;
+                            cache[val] = response.Data[0].uuid;
                             break;
                         default:
                             Console.WriteLine(@"Data.Count>1: {0}", val);
@@ -574,6 +592,14 @@ namespace SBL.DataLoader
                 if (string.IsNullOrEmpty(val)) continue;
 
                 Console.WriteLine("{0}: {1}", i, val);
+
+                string uuid = workSheet.Cells[i, "B"].Value;
+                if (!string.IsNullOrEmpty(uuid))
+                {
+                    Console.WriteLine("{0}: uuid={1}", i, uuid);
+                    continue;
+                }
+
 
                 var pharmacy = new Pharmacy();
                 pharmacy.UUID = Guid.NewGuid().ToString();
