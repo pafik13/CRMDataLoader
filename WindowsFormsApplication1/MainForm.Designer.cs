@@ -40,13 +40,15 @@
             this.AgentUUID = new System.Windows.Forms.TextBox();
             this.AccessToken = new System.Windows.Forms.RichTextBox();
             this.button9 = new System.Windows.Forms.Button();
+            this.cbIsNeedLC = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(16, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 23);
+            this.button1.Size = new System.Drawing.Size(157, 28);
             this.button1.TabIndex = 0;
             this.button1.Text = "Загрузка АС";
             this.button1.UseVisualStyleBackColor = true;
@@ -58,9 +60,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 41);
+            this.button2.Location = new System.Drawing.Point(16, 50);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 23);
+            this.button2.Size = new System.Drawing.Size(157, 28);
             this.button2.TabIndex = 1;
             this.button2.Text = "Метро";
             this.button2.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(13, 71);
+            this.button3.Location = new System.Drawing.Point(17, 87);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 23);
+            this.button3.Size = new System.Drawing.Size(156, 28);
             this.button3.TabIndex = 2;
             this.button3.Text = "Регионы";
             this.button3.UseVisualStyleBackColor = true;
@@ -78,9 +82,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 139);
+            this.button4.Location = new System.Drawing.Point(16, 171);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 23);
+            this.button4.Size = new System.Drawing.Size(157, 28);
             this.button4.TabIndex = 3;
             this.button4.Text = "Метро/Регионы";
             this.button4.UseVisualStyleBackColor = true;
@@ -88,9 +93,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(13, 169);
+            this.button5.Location = new System.Drawing.Point(17, 208);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(117, 23);
+            this.button5.Size = new System.Drawing.Size(156, 28);
             this.button5.TabIndex = 4;
             this.button5.Text = "Обработка адреса";
             this.button5.UseVisualStyleBackColor = true;
@@ -98,9 +104,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(13, 199);
+            this.button6.Location = new System.Drawing.Point(17, 245);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(117, 23);
+            this.button6.Size = new System.Drawing.Size(156, 28);
             this.button6.TabIndex = 5;
             this.button6.Text = "Аптеч. сеть";
             this.button6.UseVisualStyleBackColor = true;
@@ -108,9 +115,10 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(13, 229);
+            this.button7.Location = new System.Drawing.Point(17, 282);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(117, 23);
+            this.button7.Size = new System.Drawing.Size(156, 28);
             this.button7.TabIndex = 6;
             this.button7.Text = "Категория";
             this.button7.UseVisualStyleBackColor = true;
@@ -118,9 +126,10 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(164, 228);
+            this.button8.Location = new System.Drawing.Point(219, 281);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(171, 23);
+            this.button8.Size = new System.Drawing.Size(228, 28);
             this.button8.TabIndex = 7;
             this.button8.Text = "Выгрузить Аптеки";
             this.button8.UseVisualStyleBackColor = true;
@@ -128,34 +137,48 @@
             // 
             // AgentUUID
             // 
-            this.AgentUUID.Location = new System.Drawing.Point(136, 139);
+            this.AgentUUID.Location = new System.Drawing.Point(181, 171);
+            this.AgentUUID.Margin = new System.Windows.Forms.Padding(4);
             this.AgentUUID.Name = "AgentUUID";
-            this.AgentUUID.Size = new System.Drawing.Size(376, 20);
+            this.AgentUUID.Size = new System.Drawing.Size(500, 22);
             this.AgentUUID.TabIndex = 8;
             // 
             // AccessToken
             // 
-            this.AccessToken.Location = new System.Drawing.Point(137, 169);
+            this.AccessToken.Location = new System.Drawing.Point(183, 208);
+            this.AccessToken.Margin = new System.Windows.Forms.Padding(4);
             this.AccessToken.Name = "AccessToken";
-            this.AccessToken.Size = new System.Drawing.Size(375, 53);
+            this.AccessToken.Size = new System.Drawing.Size(499, 64);
             this.AccessToken.TabIndex = 9;
             this.AccessToken.Text = "";
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(341, 229);
+            this.button9.Location = new System.Drawing.Point(455, 282);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(171, 23);
+            this.button9.Size = new System.Drawing.Size(228, 28);
             this.button9.TabIndex = 10;
             this.button9.Text = "Выгрузить Сотрудников";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // cbIsNeedLC
+            // 
+            this.cbIsNeedLC.AutoSize = true;
+            this.cbIsNeedLC.Location = new System.Drawing.Point(495, 143);
+            this.cbIsNeedLC.Name = "cbIsNeedLC";
+            this.cbIsNeedLC.Size = new System.Drawing.Size(192, 21);
+            this.cbIsNeedLC.TabIndex = 11;
+            this.cbIsNeedLC.Text = "Нужно ли создавать LC?";
+            this.cbIsNeedLC.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 266);
+            this.ClientSize = new System.Drawing.Size(699, 327);
+            this.Controls.Add(this.cbIsNeedLC);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.AccessToken);
             this.Controls.Add(this.AgentUUID);
@@ -168,6 +191,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.ResumeLayout(false);
@@ -189,6 +213,7 @@
         private System.Windows.Forms.TextBox AgentUUID;
         private System.Windows.Forms.RichTextBox AccessToken;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.CheckBox cbIsNeedLC;
     }
 }
 

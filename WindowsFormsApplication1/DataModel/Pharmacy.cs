@@ -53,5 +53,7 @@ namespace CRMLite.Entities
 		public DateTimeOffset CreatedAt { get; set; }
 
 		public DateTimeOffset UpdatedAt { get; set; }
-	}
+
+        public bool isNeedLC { get; set; }
+    }
 }

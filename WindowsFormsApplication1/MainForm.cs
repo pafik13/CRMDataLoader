@@ -411,7 +411,7 @@ namespace SBL.DataLoader
                     continue;
                 }
 
-                string path = "Net?where={\"name\":\"" + val + "\"}";
+                string path = "Net?where={\"name\":\"" + val.Replace("+", "%2B") + "\"}";
                 request = new RestRequest(path, Method.GET);
                 response = client.Execute<List<Net>>(request);
                 if (response.StatusCode == HttpStatusCode.OK)
@@ -603,10 +603,12 @@ namespace SBL.DataLoader
 
                 var pharmacy = new Pharmacy();
                 pharmacy.UUID = Guid.NewGuid().ToString();
+                //Console.WriteLine("{0}: uuid={1}", i, uuid);
+                //pharmacy.UUID = uuid;
                 pharmacy.CreatedBy = AgentUUID.Text;
                 pharmacy.CreatedAt = DateTimeOffset.UtcNow;
                 pharmacy.UpdatedAt = DateTimeOffset.UtcNow;
-
+                pharmacy.isNeedLC = cbIsNeedLC.Checked;
                 pharmacy.SetState(PharmacyState.psActive);
                 //pharmacy.NumberName = string.Format("Номер в Excel форме: {0}", workSheet.Cells[i, "A"].Value);
                 pharmacy.LegalName = workSheet.Cells[i, "C"].Value == null ? string.Empty : workSheet.Cells[i, "C"].Value;
@@ -619,6 +621,7 @@ namespace SBL.DataLoader
                 pharmacy.Net = workSheet.Cells[i, "P"].Value == null ? string.Empty : workSheet.Cells[i, "P"].Value.ToString();
                 pharmacy.Brand = workSheet.Cells[i, "Q"].Value == null ? string.Empty : workSheet.Cells[i, "Q"].Value.ToString();
                 pharmacy.Category = workSheet.Cells[i, "T"].Value == null ? string.Empty : workSheet.Cells[i, "T"].Value.ToString();
+                pharmacy.Comment = workSheet.Cells[i, "U"].Value == null ? string.Empty : workSheet.Cells[i, "U"].Value.ToString();
 
                 string path = "Pharmacy?access_token=" + AccessToken.Text;
                 request = new RestRequest(path, Method.POST);
