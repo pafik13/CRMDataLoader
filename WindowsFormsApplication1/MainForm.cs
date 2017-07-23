@@ -622,6 +622,7 @@ namespace SBL.DataLoader
                 pharmacy.Brand = workSheet.Cells[i, "Q"].Value == null ? string.Empty : workSheet.Cells[i, "Q"].Value.ToString();
                 pharmacy.Category = workSheet.Cells[i, "T"].Value == null ? string.Empty : workSheet.Cells[i, "T"].Value.ToString();
                 pharmacy.Comment = workSheet.Cells[i, "U"].Value == null ? string.Empty : workSheet.Cells[i, "U"].Value.ToString();
+                pharmacy.Email = workSheet.Cells[i, "V"].Value == null ? string.Empty : workSheet.Cells[i, "V"].Value.ToString();
 
                 string path = "Pharmacy?access_token=" + AccessToken.Text;
                 request = new RestRequest(path, Method.POST);
